@@ -18,14 +18,20 @@
     <header></header>
     <main>
         <div id="list">
-            <div class="container-md flex-column ">
+            <div class="container-md flex-column justify-content-center align-items-center">
                 <div class="container-fluid">
-                    <h1>My ToDoList</h1>
+                    <div>
+                        <h1>My ToDoList</h1>
+                    </div>
                 </div>
                 <div class="container-fluid my-4 to-do-list">
+                    <!-- <button @click="upToIndex">Cose faccio domani?</button> -->
                     <ul>
-                        <li v-for="item in todoList">
-                            {{item[index].text}}
+                        <li class="py-3 px-2 my-2 d-flex justify-content-between align-items-center"
+                            v-for="item in todoList">
+                            <span :class="{ doornodo : item.done === true }"> {{item.text}} </span> <span> <button>
+                                    &#10003;</button> <button>
+                                    &#10060;</button></span>
                         </li>
                     </ul>
                 </div>

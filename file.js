@@ -12,13 +12,23 @@ const app = new Vue(
             },
             {
                 text: 'Seguire la lazione Boolean',
-                done: true
-            }, {
+                done: false
+            },
+            {
                 text: 'Preparare il pranzo',
-                done: true
+                done: false
+            },
+            {
+                text: 'Fare la consegna per il pomeriggio',
+                done: false
             }
             ],
             index: 0
+        },
+        methods: {
+
+
+
         }
 
     }

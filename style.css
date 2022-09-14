@@ -1,0 +1,11 @@
+li {
+    list-style-type: none;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+
+.doornodo {
+    text-decoration: line-through;
+
+}

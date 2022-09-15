@@ -23,15 +23,20 @@
                     <div>
                         <h1>My ToDoList</h1>
                     </div>
+                    <div> <input type="text" v-model="addTodo" placeholder="Inserici l'attività" @keyup.enter="newTodo">
+                        <button @click="newTodo">Aggiungi</button>
+                    </div>
                 </div>
                 <div class="container-fluid my-4 to-do-list">
                     <!-- <button @click="upToIndex">Cose faccio domani?</button> -->
                     <ul>
                         <li class="py-3 px-2 my-2 d-flex justify-content-between align-items-center"
                             v-for="item in todoList">
-                            <span :class="{ doornodo : item.done === true }"> {{item.text}} </span> <span> <button>
-                                    &#10003;</button> <button>
-                                    &#10060;</button></span>
+                            <span :class="{ doornodo : item.done === true }"> {{item.text}} </span>
+                            <span>
+                                <button @click="doneTodo(item)">&#10003;</button>
+                                <button @click="cancelItem(i)"> &#10060;</button>
+                            </span>
                         </li>
                     </ul>
                 </div>

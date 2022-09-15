@@ -2,6 +2,7 @@ const app = new Vue(
     {
         el: '#list',
         data: {
+            addTodo: '',
             todoList: [{
                 text: 'Fare Colazione',
                 done: true
@@ -23,10 +24,21 @@ const app = new Vue(
                 done: false
             }
             ],
-            index: 0
+            index: 0,
+
         },
         methods: {
+            newTodo() {
+                const newObject = { text: this.addTodo, done: false }
+                this.todoList.push(newObject)
 
+            },
+            doneTodo(item) {
+                item.done = !item.done
+            },
+            cancelItem(i) {
+                const newtodoList = this.todoList.slice(i, 1)
+            }
 
 
         }
